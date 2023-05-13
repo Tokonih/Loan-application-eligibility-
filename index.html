@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application</title>
+</head>
+
+<body>
+    <div>
+        <p>Points: <span id="Points">0</span></p>
+    </div>
+    <form action="">
+        <div>
+            <label for="">Current Account Balance</label> 
+            <input type="number" name="Current Balance" class="Loan" id="currentBalance"  placeholder="Amount">
+            <span></span>
+        </div>
+
+        <div>
+            <label for="">Loan Amount</label>
+            <input type="number" name="Loan Amount" class="Loan" id="loanAmount" placeholder="Amount">
+            <span></span>
+        </div>
+
+        <div>
+            <label for="">6 Months Credit History</label>
+            <input type="date" name="Credit History" class="Loan" id="creditHistory" placeholder="0 - 6 months">
+            <span></span>
+        </div>
+
+        <div>
+            <label for="">Last Deposit Date</label>
+            <input type="date" name="" class="Loan" id="lastDeposit" placeholder="Last Deposit Date">
+            <span></span>
+        </div>
+
+        
+        <div>
+            <label for="">Last Loan collection date</label>
+            <input type="date" name="" class="Loan" id="lastLoan">
+            <span></span>
+        </div>
+        
+        <div>
+            <label for="">Select Account Type</label>
+            <select name="" id="accountType" class="Loan">
+                <option value="Current">Current</option>
+                <option value="Savings">Savings</option>
+            </select>
+            <span></span>
+        </div>
+        
+        <div>
+            <label for="">Loan repayment Period </label>
+            <input type="number" name="Current Balance" class="Loan" id="repaymentPeriod" placeholder="Loan repayment Period ">
+            <span></span>
+        </div>
+    </form>
+    <button id="btn">Process</button>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
