@@ -6,8 +6,8 @@ let lastLoan = document.getElementById('lastLoan')
 let accountType = document.getElementById('accountType')
 let repaymentPeriod = document.getElementById('repaymentPeriod')
 let Points = document.getElementById('Points')
-// Points = 0
-// Points.innerHTML = Points 
+let Point = 0
+Points.innerHTML = Point
 
 function validation() {
     let loan = document.querySelectorAll('.Loan')
@@ -24,18 +24,21 @@ function validation() {
 
 function eligibility() {
     if (currentBalance.value > loanAmount.value) {
-        Points.innerHTML ++
+        Point = Point + 10
+        Points.innerHTML = Point
     } else if (currentBalance.value < loanAmount.value) {
-        Points.innerHTML--
-        // Points.innerHTML = -10
+        Point = Point + 0
+        Points.innerHTML = Point
     }
 
 
     // 6 months credit history
     if (creditHistory.value < 6) {
-        Points.innerHTML++
+        Point = Point + 10
+        Points.innerHTML = Point
     } else if (creditHistory.value > 6) {
-        Points.innerHTML--
+        Point = Point + 0
+        Points.innerHTML = Point
     }
 
 
@@ -44,24 +47,18 @@ function eligibility() {
     let inputDate = new Date(lastDeposit.value)
     let currentDate = new Date()
 
-    let inputYear = inputDate.getFullYear()
-    let inputMonth = inputDate.getMonth()
+    let difference = (currentDate.getMonth() * 31 + currentDate.getDay()) - (inputDate.getMonth() * 31 + inputDate.getDay());
 
-    let currentYear = currentDate.getFullYear()
-    let currentMonth = currentDate.getMonth()
 
-    let theYearDifference = currentYear - inputYear
-    let theMonthDifference = currentMonth -inputMonth
-    let totaldiff = theYearDifference*12 + theMonthDifference
-    // console.log(totaldiff)
-
-    if(totaldiff < 6){
-        // Points.innerHTML++
-        // console.log(totaldiff)
-    }else if (totaldiff > 6){
-        // Points.innerHTML--
-        // console.log(totaldiff)
+    if (difference < 31) {
+        Point = Point + 5
+        Points.innerHTML = Point
+    } else if (difference > 31) {
+        Point = Point + 0
+        Points.innerHTML = Point
     }
+
+
 
 
     // last Loan
@@ -78,44 +75,42 @@ function eligibility() {
     let monthDifference = systemMonth - usermonth
     let yearDifference = systemYear - useryear
 
-    let totalMonthsDifference = yearDifference*12 + monthDifference
+    let totalMonthsDifference = yearDifference * 12 + monthDifference
     console.log(totalMonthsDifference)
 
 
-    if(totalMonthsDifference > 6){
-        alert('youre eligible')
-        // Points.innerHTM--
-        // console.log(totalMonthsDifference)
-    }else if(totalMonthsDifference < 6){
-        alert('youre not eligible')
-        // Points.innerHTML++
-        // console.log(totalMonthsDifference)
+    if (totalMonthsDifference > 6) {
+        Point = Point + 10
+        Points.innerHTML = Point
+    } else if (totalMonthsDifference < 6) {
+        Point = Point + 0
+        Points.innerHTML = Point
     }
 
+
     // loan repayment period
-    if (repaymentPeriod.value < 6){
-        // console.log(repaymentPeriod.value)
-        // Points.innerHTML++
-    }else if (repaymentPeriod.value > 6 ){
-        // Points.innerHTML--
+    if (repaymentPeriod.value < 6) {
+        Point = Point + 10
+        Points.innerHTML = Point
+        
+    } else if (repaymentPeriod.value > 6) {
+        Point = Point + 0
+        Points.innerHTML = Point
     }
 
     // account type 
-    if (accountType.value == "Current"){
-        // Points.innerHTML++
-        alert('nice')
+    if (accountType.value == "Current") {
+        Point = Point + 10
+        Points.innerHTML = Point
 
-    }else if (accountType.value == "Savings" ){
-        // Points.innerHTML--
-        alert('not nice')
-    }else{
-        // alert('select account type')
-
-    }
+    } else if (accountType.value == "Savings") {
+        Point = Point + 5
+        Points.innerHTML = Point
+    
+    } 
 }
 
 document.getElementById('btn').onclick = () => {
     validation()
     eligibility()
-    // alert('working')
 }
