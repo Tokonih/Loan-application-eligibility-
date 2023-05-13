@@ -10,7 +10,7 @@
 
 <body>
     <div>
-        <p>Points: <span id="Points">0</span></p>
+        <p>Points: <span id="Points"></span></p>
     </div>
     <form action="">
         <div>
@@ -27,7 +27,22 @@
 
         <div>
             <label for="">6 Months Credit History</label>
-            <input type="date" name="Credit History" class="Loan" id="creditHistory" placeholder="0 - 6 months">
+            <select name="" class="Loan" id="creditHistory">
+                <option value="">select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <!-- <input type="date" name="Credit History" class="Loan" id="creditHistory" placeholder="0 - 6 months"> -->
             <span></span>
         </div>
 
@@ -43,21 +58,39 @@
             <input type="date" name="" class="Loan" id="lastLoan">
             <span></span>
         </div>
+
+        <div>
+            <label for="">Loan repayment Period </label>
+            <select name="" class="Loan"  id="repaymentPeriod">
+                <option value="">select</option>
+                <option value="1">1 month</option>
+                <option value="2">2 month</option>
+                <option value="3">3 month</option>
+                <option value="4">4 month</option>
+                <option value="5">5 month</option>
+                <option value="6">6 month</option>
+                <option value="7">7 month</option>
+                <option value="8">8 month</option>
+                <option value="9">9 month</option>
+                <option value="10">10 month</option>
+                <option value="11">11 month</option>
+                <option value="12">12 month</option>
+            </select>
+            <!-- <input type="number" name="Current Balance" class="Loan" id="repaymentPeriod" placeholder="Loan repayment Period "> -->
+            <span></span>
+        </div>
         
         <div>
             <label for="">Select Account Type</label>
             <select name="" id="accountType" class="Loan">
+                <option value="">select</option>
                 <option value="Current">Current</option>
                 <option value="Savings">Savings</option>
             </select>
             <span></span>
         </div>
         
-        <div>
-            <label for="">Loan repayment Period </label>
-            <input type="number" name="Current Balance" class="Loan" id="repaymentPeriod" placeholder="Loan repayment Period ">
-            <span></span>
-        </div>
+      
     </form>
     <button id="btn">Process</button>
 
